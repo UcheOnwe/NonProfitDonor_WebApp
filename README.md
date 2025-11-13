@@ -72,6 +72,6 @@ This project demonstrates full-stack C# development, database integration, CRUD 
 - Convert into a full CRUD system for all tables
 
 ## Author
-Uchechukwu Onwe
-Computer Science - University of Houston-Victoria
-Passionate about backend development, C#, Blazor, SQL, and building real-world apps.
+- Uchechukwu Onwe
+- Computer Science - University of Houston-Victoria
+- Passionate about backend development, C#, Blazor, SQL, and building real-world apps.
