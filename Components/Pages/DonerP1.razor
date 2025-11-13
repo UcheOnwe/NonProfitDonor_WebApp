@@ -1,0 +1,37 @@
+﻿@page "/Doner"
+@using B7.Models
+@inject Donor_DBContext _dbContext
+@using Radzen
+@using Radzen.Blazor
+
+
+
+
+    <RadzenDataGrid AllowFiltering="true" AllowColumnResize="true" FilterMode="FilterMode.Advanced" AllowSorting="true" PageSize="5" AllowPaging="true" PagerHorizontalAlign="HorizontalAlign.Left" ShowPagingSummary="true"
+                    Data="@doners" ColumnWidth="300px" LogicalFilterOperator="LogicalFilterOperator.Or" SelectionMode="DataGridSelectionMode.Single">
+        <Columns>
+            <RadzenDataGridColumn Property="@nameof(Donor.Id)" Filterable="false" Title="ID" Frozen="true" Width="80px" TextAlign="TextAlign.Center" />
+            <RadzenDataGridColumn Property="@nameof(Donor.FirstName)" Title="First Name" Frozen="true" Width="160px" />
+            <RadzenDataGridColumn Property="@nameof(Donor.LastName)" Title="Last Name" Width="160px" />
+            <RadzenDataGridColumn Property="@nameof(Donor.Phone)" Title="Last Name" Width="160px" />
+            <RadzenDataGridColumn Property="@nameof(Donor.Address)" Title="Last Name" Width="160px" />
+            <RadzenDataGridColumn Property="@nameof(Donor.Email)" Title="Last Name" Width="160px" />
+
+        </Columns>
+    </RadzenDataGrid>
+
+
+
+
+
+@code {
+    List<Donor> doners = new();
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        doners = _dbContext.Donors.ToList();
+    }
+
+}

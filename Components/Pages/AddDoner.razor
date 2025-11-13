@@ -1,0 +1,93 @@
+﻿@page "/AddDoner"
+@using B7.Models
+@using Radzen
+@using Radzen.Blazor
+@rendermode InteractiveServer
+
+@inject Donor_DBContext _dbContext  
+@inject NotificationService NotificationService
+
+
+
+
+<H2>Enter Doner Information</H2>
+
+<div class="rz-p-0 rz-p-md-12">
+    <RadzenRow Gap="1rem">
+        <RadzenColumn Size="12" SizeSM="6">
+            <RadzenStack>
+                <RadzenFormField Text="First Name">
+                    <RadzenTextBox @bind-Value="@_doner.FirstName" />
+                </RadzenFormField>
+                <RadzenFormField Text="Last Name">
+                    <RadzenTextBox @bind-Value="@_doner.LastName" />
+                </RadzenFormField>
+                <RadzenFormField Text="Email">
+                    <RadzenTextBox @bind-Value="@_doner.Email" />
+                </RadzenFormField>
+                <RadzenFormField Text="Phone Number">
+                    <RadzenTextBox @bind-Value="@_doner.Phone" />
+                </RadzenFormField>
+                <RadzenButton Click="@SaveDonerInfo" Text="SUBMIT DONER INFO" ButtonStyle="@ButtonStyle.Primary" />
+            </RadzenStack>
+        </RadzenColumn>
+        <RadzenColumn Size="12" SizeSM="6">
+            <RadzenStack>
+                <RadzenFormField Text="Address">
+                    <RadzenTextArea @bind-Value="@_doner.Address" />
+                </RadzenFormField>
+            </RadzenStack>
+        </RadzenColumn>
+
+    </RadzenRow>
+
+</div>
+
+
+@code {
+    string? _firstName;
+    Donor _doner;
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        _doner = new Donor();
+    }
+
+    private void SaveDonerInfo()    
+    {
+        try
+        {
+            if (!string.IsNullOrEmpty(_doner.Address) && !string.IsNullOrEmpty(_doner.FirstName)
+            && !string.IsNullOrEmpty(_doner.Address) && !string.IsNullOrEmpty(_doner.Phone)
+            && !string.IsNullOrEmpty(_doner.Email))
+            {
+                //Add to db
+                var result = _dbContext.Donors.Add(_doner);
+                _dbContext.SaveChanges();
+                // Giver use message
+                NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Info, Summary = "Add Doner Success", Detail = "Doner has been added" });
+
+                // reset fields
+                EmptyDonerFields();
+            }
+            else
+            {
+                NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Error, Summary = "Fields cannot be empty", Detail = "Make sure all fields have data" });
+
+            }
+        }
+        catch (Exception ex)
+        {
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Warning, Summary = "Add Doner Failed", Detail = "Could not add Doner info" });
+            
+        }
+       
+        
+    }
+
+    private void EmptyDonerFields()
+    {
+        _doner.Address = _doner.FirstName = _doner.LastName = _doner.Phone = _doner.Email = string.Empty;
+    }
+}
