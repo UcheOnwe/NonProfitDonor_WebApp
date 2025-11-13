@@ -59,7 +59,7 @@ This project demonstrates full-stack C# development, database integration, CRUD 
 3. Ensure you have:
  .NET 8 SDK
   SQL Server LocalDB  
-4. Update the connection string in `appsettings.json`  
+4. Update the connection string in "appsettings.json"  
 5. Run the application  
 
 ## Future Improvements
@@ -72,6 +72,6 @@ This project demonstrates full-stack C# development, database integration, CRUD 
 - Convert into a full CRUD system for all tables
 
 ## Author
-- Uchechukwu Onwe
-- Computer Science - University of Houston-Victoria
+- Uchechukwu Onwe.
+- Computer Science - University of Houston-Victoria.
 - Passionate about backend development, C#, Blazor, SQL, and building real-world apps.
