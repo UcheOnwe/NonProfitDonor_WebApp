@@ -10,7 +10,7 @@ Built using C#, SQL Server, Entity Framework Core, and Radzen components.
 - Automatically generated DB context and models
 - Clean UI using Radzen components
 
-## Technologies
+## Tools
 - C# (.NET 8)
 - Blazor Server
 - Entity Framework Core
