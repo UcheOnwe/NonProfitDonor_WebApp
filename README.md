@@ -1,101 +1,77 @@
-NonProfit Donor Management Web App
+# Nonprofit Donor Management Web App
 
-A Blazor Server web application for managing non-profit donors, recording donor information, tracking submissions, and displaying records using SQL Server LocalDB, Entity Framework Core, and Radzen UI components.
-
+A Blazor Server web application for managing donors, donations, and nonprofit records.  
+Built using C#, SQL Server, Entity Framework Core, and Radzen UI components.
 This project demonstrates full-stack C# development, database integration, CRUD operations, and UI design.
 
-🚀 Features
-✅ Donor Management
+## Features
+### Donor Management
+- Add new donors
 
-Add new donors
+- Validate donor form fields
 
-Validate donor form fields
+- Display all donors in a DataGrid
 
-Display all donors in a DataGrid
+- Auto-generated database entities from SQL schema
 
-Auto-generated database entities from SQL schema
+- SQL Server LocalDB using EF Core
 
-SQL Server LocalDB using EF Core
+### Database
+- Multiple tables: Donor, Donation, DonationCategory, Expense, etc.
 
-📊 Database
+- Relational database with primary & foreign keys
 
-Multiple tables: Donor, Donation, DonationCategory, Expense, etc.
+- Reverse-engineered entity models using EF Core Power Tools
 
-Relational database with primary & foreign keys
+- ER relationship diagram included
 
-Reverse-engineered entity models using EF Core Power Tools
+### Front-End (Blazor + Radzen)
+- Responsive donor form
 
-ER relationship diagram included
+- Validation warnings
 
-🖥️ Front-End (Blazor + Radzen)
+- Auto-refresh table
 
-Responsive donor form
+- Clean UI layout using Radzen components
+  
+## Tech Stack
+- Front-end (Blazor Server, Radzen UI)
+- Back-end (C# (.NET 8), Entity Framework Core)
+- Database(SQL Server LocalDB)
+- Tools (Visual Studio 2022, EF Core Power Tools)
+- Version Control (Git + GitHub)
 
-Validation warnings
-
-Auto-refresh table
-
-Clean UI layout using Radzen components
-
-🛠️ Tech Stack
-Layer	Technology
-Front-end	Blazor Server, Radzen UI
-Back-end	C# (.NET 8), Entity Framework Core
-Database	SQL Server LocalDB
-Tools	Visual Studio 2022, EF Core Power Tools
-Version Control	Git + GitHub
-📂 Project Structure
-/Components
-/Models
-/Pages
-/wwwroot
-/Screenshots
-Program.cs
-appsettings.json
-B7.csproj
-
-📸 Screenshots
-Add Donor Form
-
-Donor List / Display
-
-Donor Submitted Notification
-
-Validation Warning
-
-Database Relationship Diagram
-
-⚙️ How to Run the Project
-
-Clone the repository:
-
-git clone https://github.com/UcheOnwe/NonProfitDonor_WebApp.git
+## Project Structure
+- /Components
+- /Models
+- /Pages
+- /wwwroot
+- /Screenshots
+- Program.cs
+- appsettings.json
+- B7.csproj
 
 
-Open the solution in Visual Studio 2022
+## How to Run
+1. Clone the repository:   git clone https://github.com/UcheOnwe/NonProfitDonor_WebApp.git
 
-Ensure you have:
+2. Open the solution in Visual Studio 2022
+3. Ensure you have:
+ .NET 8 SDK
+  SQL Server LocalDB  
+4. Update the connection string in `appsettings.json`  
+5. Run the application  
 
-.NET 8 SDK
+## Future Improvements
+- Add donations & expenses pages
 
-SQL Server LocalDB
+- Add user authentication
 
-Update the connection string in appsettings.json (if needed)
+- Add reporting dashboard
 
-Run the project (Ctrl + F5)
+- Convert into a full CRUD system for all tables
 
-📈 Future Improvements
-
-Add donations & expenses pages
-
-Add user authentication
-
-Add reporting dashboard
-
-Convert into a full CRUD system for all tables
-
-👤 Author
-
+## Author
 Uchechukwu Onwe
-Computer Science — University of Houston-Victoria
+Computer Science - University of Houston-Victoria
 Passionate about backend development, C#, Blazor, SQL, and building real-world apps.
