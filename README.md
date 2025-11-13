@@ -21,5 +21,5 @@ Built using C#, SQL Server, Entity Framework Core, and Radzen components.
 ## How to Run
 1. Clone the repo  
 2. Restore NuGet packages  
-3. Update the connection string in `appsettings.json`  
+3. Update the connection string in "appsettings.json"  
 4. Run the application  
