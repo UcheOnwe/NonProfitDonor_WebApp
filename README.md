@@ -73,5 +73,5 @@ This project demonstrates full-stack C# development, database integration, CRUD 
 
 ## Author
 - Uchechukwu Onwe.
-- Computer Science - University of Houston-Victoria.
+- Computer Science - Texas A&M University - Victoria.
 - Passionate about backend development, C#, Blazor, SQL, and building real-world apps.
