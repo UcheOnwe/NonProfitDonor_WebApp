@@ -41,6 +41,10 @@ This project demonstrates full-stack C# development, database integration, CRUD 
 - Tools (Visual Studio 2022, EF Core Power Tools)
 - Version Control (Git + GitHub)
 
+## Project Demo Videos
+- **Early UI Demo - Donors, Donations & Categories**
+ https://youtu.be/G9mieZYUmSg
+- **Full Application Demo - Expense & Expense Categories** 
 ## Project Structure
 - /Components
 - /Models
